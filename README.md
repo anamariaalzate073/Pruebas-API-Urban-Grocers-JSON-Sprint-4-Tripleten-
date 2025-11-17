@@ -43,3 +43,4 @@ Requisito 1 - Kits:
 - **Passed:** 9 casos  
 - **Failed:** 23 casos
 - **Bugs encontrados:** 7
+- 
