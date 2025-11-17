@@ -1,0 +1,924 @@
+{
+	"info": {
+		"_postman_id": "9a7de2d4-deee-46e3-a21f-9fedbff2c89f",
+		"name": "SPRINT 4 ORDER AND GO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49196886"
+	},
+	"item": [
+		{
+			"name": "1.Verificar que la solicitud con datos válidos devuelva respuesta exitosa. en la tarifa 1(envío 3$)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.Verificar que la solicitud con datos válidos devuelva respuesta exitosa. en la tarifa 2(envío 5$)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 12,\r\n    \"productsWeight\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.Verificar que falte un campo obligatorio (deliveryTime).",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productsCount\": 10,\r\n    \"productsWeight\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.Verificar que falte productsCount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 9,\r\n       \"productsWeight\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5.Verificar que falte productsWeight",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 9,\r\n    \"productsCount\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6.Verificar que deliveryTime tenga tipo incorrecto (texto).",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": \"nueve\",\r\n    \"productsCount\": 10,\r\n    \"productsWeight\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7.Verificar que productsCount tenga tipo incorrecto (texto)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 9,\r\n    \"productsCount\": \"diez\",\r\n    \"productsWeight\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8.Verificar que productsWeight tenga tipo incorrecto (texto)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 9,\r\n    \"productsCount\": \"diez\",\r\n    \"productsWeight\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9.Verificar estructura inválida del body (no JSON)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "productId: 1, quantity: 2",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10.Verificar límite inferior de deliveryTime permitido (mínimo horario válido)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 8,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11.Verificar límite superior de deliveryTime permitido.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 22,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12.Verificar deliveryTime menor al rango permitido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 7,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13.Verificar deliveryTime mayor al rango permitido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 23,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14.Verificar productsCount en límite inferior válido (0). tarifa 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 0,\r\n    \"productsWeight\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15.Verificar limite superior de productsCount para tarifa 1(8)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 8,\r\n    \"productsWeight\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16.Verificar limite superior mayor de productsCount  al permitido para la ratifa 1 (9)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 9,\r\n    \"productsWeight\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17.verificar limite inferior products Count para la tarifa 2 (9)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 9,\r\n    \"productsWeight\": 3.2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18.verificar limite superior products Count para la tarifa 2 (15)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 15,\r\n    \"productsWeight\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19.Verificar productsCount que excede el máximo permitido. Tarifa 2 (16)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 16,\r\n    \"productsWeight\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "20.Verificar limite inferior productsCount menor al rango permitido en la tarifa 2 (8)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 8,\r\n    \"productsWeight\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "21.Verificar productsWeight en límite inferior, tarifa 1 (0 kg).",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22.Verificar productsWeight en límite superior, tarifa 1 (3 kg)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "23.Verificar productsWeight mayor al máximo permitido en la tarifa 1  (3.1 kg).",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 3.1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "24.Verificar límite superior de productsWeight  tarifa 2 (6 kg).",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 3.1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "25.Verificar productsWeight mayor al máximo permitido, tarifa 2 (6.1 kg)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 10,\r\n    \"productsWeight\": 6.1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "26.Verificar productsWeight menor al máximo permitido, tarifa 2 (3kg)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 10,\r\n    \"productsWeight\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "27.Verificar límite inferior de productsWeight para tarifa 2 (3.1 kg).",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 10,\r\n    \"productsCount\": 10,\r\n    \"productsWeight\": 3.1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "28.Verificar deliveryTime con valor negativo.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": -9,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "29.Verificar productsCount negativo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 9,\r\n    \"productsCount\": -5,\r\n    \"productsWeight\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "30.Verificar productsWeight negativo.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 9,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": -2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "31.Verificar body vacío",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "32.Verificar body con campos extra no reconocidos.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryTime\": 9,\r\n    \"productsCount\": 10,\r\n    \"productsWeight\": 11,\r\n    \"extra\": \"x\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Order and go}}/order-and-go/v1/delivery",
+					"host": [
+						"{{Order and go}}"
+					],
+					"path": [
+						"order-and-go",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
